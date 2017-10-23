@@ -3,7 +3,7 @@ import 'mocha';
 
 import { hSize, hTime } from '../src/utils';
 
-describe.only('hTime', () => {
+describe('hTime', () => {
   it('should return valid hours', () => {
     const result = hTime(4 * 60 * 60 * 1000);
     expect(result).to.equal('4 h 0 m 0 s');
