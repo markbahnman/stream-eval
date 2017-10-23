@@ -21,6 +21,6 @@
     "pretest": "npm run build",
     "test": "cat tests/lorem.txt | node lib/index.js",
     "lorem": "./node_modules/.bin/lorem-ipsum --units paragraphs --count 10000 > tests/lorem.txt",
-    "lorem-big": "./node_modules/.bin/lorem-ipsum --units paragraphs --count 500000 > tests/lorem.txt"
+    "lorem-big": "./node_modules/.bin/lorem-ipsum --units paragraphs --count 10000 > tests/lorem.txt && for i in {1..9}; do cat tests/lorem.txt tests/lorem.txt > tests/tmp.txt && mv tests/tmp.txt tests/lorem.txt; done"
   }
 }

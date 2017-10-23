@@ -9,12 +9,10 @@ import Summer from '../src/Summer';
 describe('Tapper', () => {
   it('should have valid defaults', () => {
     const tap = new Tapper();
-    expect(tap).to.be
-      .an('object')
-      .that.includes.all.keys('_start', '_size', '_lines');
+    expect(tap).to.be.an('object').that.includes.all.keys('_data', '_start');
   });
 
-  it.only('should count a valid text stream', () => {
+  it.skip('should count a valid text stream', () => {
     const stream = fs.createReadStream(path.join(__dirname, 'lorem.txt'));
     const tap = new Tapper();
     const sum = new Summer();
