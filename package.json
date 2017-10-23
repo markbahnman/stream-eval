@@ -1,7 +1,7 @@
 {
   "name": "stream-eval",
   "version": "1.0.0",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "repository": "https://github.com/markbahnman/stream-eval",
   "author": "= <mark.bahnman@gmail.com>",
   "license": "MIT",
