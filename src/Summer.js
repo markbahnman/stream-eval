@@ -9,7 +9,6 @@ export default class Summer extends Transform {
 
   _transform(chunk, encoding, done) {
     if (chunk !== null) {
-      this._data = chunk;
       let output = `Bytes processed: ${hSize(
         chunk.size
       )} Lines: ${chunk.lines} Time elapsed: ${hTime(
@@ -20,6 +19,7 @@ export default class Summer extends Transform {
           output +
           new Array(this._prevOutput.length - output.length + 1).join(' ');
       }
+
       this.push(output + '\r');
       this._prevOutput = output;
     }
