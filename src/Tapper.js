@@ -30,6 +30,8 @@ export default class Tapper extends Duplex {
   }
 
   _read(size) {
+    // This is a weird hack because without it _read continuously
+    // fires and _write never does for some reason
     setTimeout(() => {
       this.push(this._getOutput());
     }, 100);
