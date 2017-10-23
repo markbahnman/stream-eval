@@ -1,0 +1,26 @@
+{
+  "name": "stream-eval",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "repository": "https://github.com/markbahnman/stream-eval",
+  "author": "= <mark.bahnman@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
+    "lorem-ipsum": "^1.0.4",
+    "mocha": "^4.0.1"
+  },
+  "scripts": {
+    "unit": "mocha -r babel-core/register tests/**/*.js",
+    "build": "./node_modules/.bin/babel src --out-dir lib",
+    "pretest": "npm run build",
+    "test": "cat tests/lorem.txt | node lib/index.js",
+    "lorem": "./node_modules/.bin/lorem-ipsum --units paragraphs --count 10000 > tests/lorem.txt",
+    "lorem-big": "./node_modules/.bin/lorem-ipsum --units paragraphs --count 500000 > tests/lorem.txt"
+  }
+}
