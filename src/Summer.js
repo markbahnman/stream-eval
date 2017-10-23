@@ -12,10 +12,9 @@ export default class Summer extends Transform {
       this._data = chunk;
       let output = `Bytes processed: ${hSize(
         chunk.size
-      )} Lines: ${chunk.lines} Time spent: ${hTime(chunk.time)} ${hThroughput(
-        chunk.size,
+      )} Lines: ${chunk.lines} Time elapsed: ${hTime(
         chunk.time
-      )}`;
+      )} Throughput: ${hThroughput(chunk.size, chunk.time)}`;
       if (this._prevOutput.length > output.length) {
         output =
           output +
